@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { WallCalendar } from './components/WallCalendar/WallCalendar';
 import { Sun, Moon } from 'lucide-react';
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   const [theme, setTheme] = useState<'light' | 'dark'>(() => {
@@ -71,6 +72,7 @@ function App() {
       <div className="mt-4 text-zinc-500 dark:text-zinc-500 text-[10px] md:text-xs font-medium tracking-wide relative z-20">
         Created by <a href="https://github.com/priyanshuwalia" target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-zinc-800 dark:hover:text-zinc-300 transition-colors">Priyanshu Walia</a>
       </div>
+      <Analytics />
     </div>
   );
 }
