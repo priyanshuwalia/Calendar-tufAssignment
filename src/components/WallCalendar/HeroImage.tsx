@@ -1,19 +1,16 @@
 import React from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-
 interface Theme {
   name: string;
   color: string;
   image: string;
 }
-
 interface HeroImageProps {
   monthName: string;
   theme: Theme;
   onNextTheme: () => void;
   onPrevTheme: () => void;
 }
-
 export const HeroImage: React.FC<HeroImageProps> = ({ 
   monthName, 
   theme,
@@ -22,14 +19,12 @@ export const HeroImage: React.FC<HeroImageProps> = ({
 }) => {
   return (
     <div className="relative w-full h-32 md:h-40 lg:h-44 rounded-t-2xl overflow-hidden shadow-sm group">
-      {/* Ensure the image container works with absolute positioned elements */}
       <img
-        key={theme.image} // Force re-render/animation if we add one later
+        key={theme.image}
         src={theme.image}
         alt={`${monthName} aesthetics`}
         className="object-cover w-full h-full transition-opacity duration-500 animate-in fade-in"
       />
-      {/* Gradient overlay for text legibility and premium feel */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
       
       <div className="absolute bottom-2 md:bottom-3 left-4 md:left-6 right-4 md:right-6 flex items-end justify-between z-10">
@@ -42,8 +37,6 @@ export const HeroImage: React.FC<HeroImageProps> = ({
           </h2>
         </div>
       </div>
-
-      {/* Theme Controls visible on hover */}
       <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <button 
           onClick={onPrevTheme}

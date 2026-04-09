@@ -1,10 +1,9 @@
 @import "tailwindcss";
-
+@custom-variant dark (&:is(.dark *));
 @layer base {
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
-
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
  
@@ -25,7 +24,6 @@
  
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
@@ -73,66 +71,49 @@
     color: hsl(var(--foreground));
   }
 }
-
-/* Custom Calendar Animations and Utilities */
 .perspective-1000 {
   perspective: 1000px;
 }
-
 .preserve-3d {
   transform-style: preserve-3d;
 }
-
 .backface-hidden {
   backface-visibility: hidden;
 }
-
-/* Flip Animations (Vertical) */
 .origin-top {
   transform-origin: top;
 }
-
 .origin-bottom {
   transform-origin: bottom;
 }
-
 @keyframes flipOutUp {
   from { transform: rotateX(0deg); opacity: 1; }
   to { transform: rotateX(90deg); opacity: 0; }
 }
-
 @keyframes flipInUp {
   from { transform: rotateX(-90deg); opacity: 0; }
   to { transform: rotateX(0deg); opacity: 1; }
 }
-
 @keyframes flipOutDown {
   from { transform: rotateX(0deg); opacity: 1; }
   to { transform: rotateX(-90deg); opacity: 0; }
 }
-
 @keyframes flipInDown {
   from { transform: rotateX(90deg); opacity: 0; }
   to { transform: rotateX(0deg); opacity: 1; }
 }
-
 .animate-flip-out-up {
   animation: flipOutUp 0.4s ease-in forwards;
 }
-
 .animate-flip-in-up {
   animation: flipInUp 0.4s ease-out forwards;
 }
-
 .animate-flip-out-down {
   animation: flipOutDown 0.4s ease-in forwards;
 }
-
 .animate-flip-in-down {
   animation: flipInDown 0.4s ease-out forwards;
 }
-
-/* Ruled paper background pattern */
 .bg-ruled-light {
   background-image: repeating-linear-gradient(
     transparent,
@@ -143,7 +124,6 @@
   background-attachment: local;
   line-height: 32px;
 }
-
 .bg-ruled-dark {
   background-image: repeating-linear-gradient(
     transparent,
