@@ -5,7 +5,7 @@ interface NotesSectionProps {
   onNoteUpdate?: () => void;
   onExitSelection?: () => void;
 }
-const TAG_COLORS = ['#ef4444', '#f59e0b', '#10b981', '#3b82f6', '#8b5cf6'];
+const TAG_COLORS = ['#ef4444', '#f59e0b', '#10b981'];
 export const NotesSection: React.FC<NotesSectionProps> = ({ selectedRange, onNoteUpdate, onExitSelection }) => {
   const [notes, setNotes] = useState<string>("");
   const [selectedColor, setSelectedColor] = useState<string>(TAG_COLORS[0]);
@@ -79,8 +79,10 @@ export const NotesSection: React.FC<NotesSectionProps> = ({ selectedRange, onNot
       <div className="mb-4 flex flex-col md:flex-row items-start md:items-center justify-between mt-2 gap-2">
         <h3 
           key={animateKey} 
-          className="text-lg font-semibold text-zinc-800 dark:text-zinc-100 transition-colors"
-          style={{ animation: 'flipInRight 0.3s ease-out forwards' }}
+          className="text-lg md:text-xl font-bold text-zinc-900 dark:text-zinc-100 transition-colors duration-500 tracking-wide"
+          style={{ 
+            animation: 'flipInRight 0.3s ease-out forwards'
+          }}
         >
           {contextTitle}
         </h3>

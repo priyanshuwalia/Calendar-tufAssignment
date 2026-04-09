@@ -18,7 +18,7 @@ export const HeroImage: React.FC<HeroImageProps> = ({
   onPrevTheme
 }) => {
   return (
-    <div className="relative w-full h-32 md:h-40 lg:h-44 rounded-t-2xl overflow-hidden shadow-sm group">
+    <div className="relative w-full h-40 md:h-56 lg:h-64 rounded-t-2xl overflow-hidden shadow-sm group">
       <img
         key={theme.image}
         src={theme.image}

@@ -32,7 +32,7 @@ export const DayView: React.FC<DayViewProps> = ({ currentDate, onPrevDay, onNext
     }
   };
 
-  const hours = Array.from({ length: 24 }, (_, i) => i);
+  const hours = Array.from({ length: 16 }, (_, i) => i + 8);
 
   return (
     <div className="absolute inset-0 p-4 md:p-6 flex flex-col transition-colors duration-300 bg-white dark:bg-zinc-950">
@@ -44,10 +44,13 @@ export const DayView: React.FC<DayViewProps> = ({ currentDate, onPrevDay, onNext
           <ChevronLeft size={20} />
         </button>
         <div className="flex flex-col items-center">
-          <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 tracking-wide">
+          <h2 
+            className="text-xl md:text-2xl font-bold tracking-wide drop-shadow-sm transition-colors duration-500"
+            style={{ color: 'var(--theme-accent)' }}
+          >
              {currentDate.toLocaleDateString('default', { weekday: 'long' })}
           </h2>
-          <span className="text-sm font-medium text-[var(--theme-accent)]">
+          <span className="text-sm font-medium text-[var(--theme-accent)] opacity-80 transition-opacity">
              {currentDate.toLocaleDateString('default', { month: 'long', day: 'numeric', year: 'numeric' })}
           </span>
         </div>

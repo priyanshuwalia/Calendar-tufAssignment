@@ -45,11 +45,11 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-zinc-100 dark:bg-zinc-950 flex flex-col items-center py-2 md:py-8 px-2 md:px-4 transition-colors duration-300 font-sans relative overflow-hidden">
+    <div className="min-h-screen bg-zinc-100 dark:bg-zinc-950 flex flex-col items-center py-2 md:py-4 px-2 md:px-4 transition-colors duration-300 font-sans relative overflow-hidden">
       {/* Subtle vignette/spotlight background for focused area */}
       <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-200/50 via-zinc-200/20 to-zinc-300/80 dark:from-zinc-800/20 dark:via-zinc-900/40 dark:to-black/80 transition-colors duration-500"></div>
 
-      <div className="w-full max-w-4xl flex justify-end mb-4 md:mb-6 relative z-20">
+      <div className="w-full max-w-5xl flex justify-end mb-4 md:mb-6 relative z-20">
          <button 
            onClick={toggleTheme}
            className="p-2.5 rounded-full border border-zinc-200 dark:border-zinc-800 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-sm text-zinc-600 dark:text-zinc-300 hover:bg-white dark:hover:bg-zinc-800 transition-all shadow-sm focus:outline-none focus:ring-2 focus:ring-zinc-400 dark:focus:ring-zinc-600"
@@ -68,7 +68,7 @@ function App() {
       
       <WallCalendar />
       
-      <div className="mt-8 text-zinc-500 dark:text-zinc-500 text-[10px] md:text-xs font-medium tracking-wide relative z-20">
+      <div className="mt-4 text-zinc-500 dark:text-zinc-500 text-[10px] md:text-xs font-medium tracking-wide relative z-20">
         Created by <a href="https://github.com/priyanshuwalia" target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-zinc-800 dark:hover:text-zinc-300 transition-colors">Priyanshu Walia</a>
       </div>
     </div>

@@ -103,7 +103,7 @@ export const CalendarGrid: React.FC<CalendarGridProps> = (props) => {
     }
     
     const isToday = isSameDay(cellDate, new Date());
-    let baseClass = "h-9 w-9 md:h-10 md:w-10 flex flex-col items-center justify-center rounded-full text-xs md:text-sm font-medium transition-all duration-200 cursor-pointer relative z-10 ";
+    let baseClass = "h-[34px] w-[34px] md:h-10 md:w-10 flex flex-col items-center justify-center rounded-full text-[11px] md:text-sm font-medium transition-all duration-200 cursor-pointer relative z-10 ";
     let cellStyle: React.CSSProperties = {};
     
     if (!isCurrentMonth) {
@@ -111,7 +111,7 @@ export const CalendarGrid: React.FC<CalendarGridProps> = (props) => {
     } else {
       baseClass += "text-zinc-700 dark:text-zinc-200 ";
     }
-    let wrapperClass = "relative w-full h-9 md:h-10 flex items-center justify-center";
+    let wrapperClass = "relative w-full h-[34px] md:h-10 flex items-center justify-center";
     let connectClass = "";
     let connectStyle: React.CSSProperties = {};
     let showConnect = false;
@@ -191,15 +191,18 @@ export const CalendarGrid: React.FC<CalendarGridProps> = (props) => {
     );
   };
   return (
-    <div className="flex-1 p-4 md:p-6 flex flex-col items-center select-none transition-colors duration-300">
-      <div className="w-full flex items-center justify-center gap-4 md:gap-6 mb-4 md:mb-6 mt-1 md:mt-0">
+    <div className="flex-1 p-4 md:p-5 flex flex-col items-center select-none transition-colors duration-300">
+      <div className="w-full flex items-center justify-center gap-4 md:gap-6 mb-3 md:mb-5 mt-1 md:mt-0">
         <button 
           onClick={onPrevMonth}
           className="p-2 rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-colors text-zinc-600 dark:text-zinc-300"
         >
           <ChevronLeft size={20} />
         </button>
-        <h2 className="text-lg md:text-xl font-semibold text-zinc-900 dark:text-zinc-100 tracking-wide min-w-[140px] text-center">
+        <h2 
+          className="text-xl md:text-2xl font-bold tracking-wide min-w-[160px] text-center drop-shadow-sm transition-colors duration-500"
+          style={{ color: 'var(--theme-accent)' }}
+        >
           {currentDate.toLocaleString('default', { month: 'long', year: 'numeric' })}
         </h2>
         <button 
@@ -209,9 +212,9 @@ export const CalendarGrid: React.FC<CalendarGridProps> = (props) => {
           <ChevronRight size={20} />
         </button>
       </div>
-      <div className="w-full max-w-md grid grid-cols-7 gap-y-1 md:gap-y-1 place-items-center">
+      <div className="w-full max-w-md grid grid-cols-7 gap-y-1 md:gap-y-1.5 place-items-center">
         {DAYS_OF_WEEK.map(day => (
-          <div key={day} className="text-[9px] md:text-[10px] font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest mb-2 md:mb-3">
+          <div key={day} className="text-[9px] md:text-[10px] font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest mb-1.5 md:mb-2.5">
             {day}
           </div>
         ))}

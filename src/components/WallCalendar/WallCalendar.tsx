@@ -56,7 +56,7 @@ export const WallCalendar: React.FC = () => {
       setCurrentDate(prevDate);
       setFlipDirection('idle');
       setAnimDate(null);
-    }, 400); 
+    }, 600); 
   };
   const handleNextMonth = () => {
     if (flipDirection !== 'idle') return;
@@ -68,7 +68,7 @@ export const WallCalendar: React.FC = () => {
     setTimeout(() => {
       setFlipDirection('idle');
       setAnimDate(null);
-    }, 400); 
+    }, 600); 
   };
 
   const handlePrevDay = () => {
@@ -82,7 +82,7 @@ export const WallCalendar: React.FC = () => {
       setCurrentDate(prevDate);
       setFlipDirection('idle');
       setAnimDate(null);
-    }, 400); 
+    }, 600); 
   };
 
   const handleNextDay = () => {
@@ -96,7 +96,7 @@ export const WallCalendar: React.FC = () => {
     setTimeout(() => {
       setFlipDirection('idle');
       setAnimDate(null);
-    }, 400); 
+    }, 600); 
   };
   const handlePrevTheme = () => {
     setThemeIndex(prev => (prev === 0 ? THEMES.length - 1 : prev - 1));
@@ -126,7 +126,7 @@ export const WallCalendar: React.FC = () => {
     const mName = targetDate.toLocaleString('default', { month: 'long' });
     return (
       <div 
-        className={`flex flex-col w-full shadow-2xl rounded-2xl overflow-hidden bg-white dark:bg-zinc-950 transition-colors duration-300 preserve-3d origin-top ${animClass} ${zIndex} ${isAbsolute ? 'absolute top-0 left-0 right-0 pointer-events-none' : 'relative'}`}
+        className={`flex flex-col w-full border border-zinc-200/80 dark:border-zinc-800/80 shadow-[24px_16px_48px_-12px_rgba(0,0,0,0.2)] dark:shadow-[24px_16px_48px_-12px_rgba(0,0,0,0.7)] rounded-2xl overflow-hidden bg-white dark:bg-zinc-950 transition-colors duration-300 preserve-3d origin-top ${animClass} ${zIndex} ${isAbsolute ? 'absolute top-0 left-0 right-0 pointer-events-none' : 'relative'}`}
         style={{ '--theme-accent': activeTheme.color } as React.CSSProperties}
         aria-hidden={isAbsolute}
       >
@@ -206,7 +206,7 @@ export const WallCalendar: React.FC = () => {
   );
 };
   return (
-    <div className="w-full max-w-4xl mx-auto perspective-1000 relative z-10">
+    <div className="w-full max-w-5xl mx-auto perspective-1000 relative z-10">
       
       {selectedRange.start && (
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-50 bg-zinc-900/90 dark:bg-white/90 text-white dark:text-zinc-900 px-5 py-2.5 rounded-full text-xs font-semibold shadow-xl backdrop-blur-md animate-in slide-in-from-bottom-6 fade-in duration-300 flex items-center gap-2 transition-all">
